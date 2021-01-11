@@ -64,7 +64,6 @@ class Budget extends PureComponent {
               placeholder="Monthly Income"
               onChange={this.handleIncomeInput}
             />
-            <button onClick={this.updateIncome}>Update Income</button>
           </div>
           <div className="budget-card-container">{categoryCards}</div>
         </div>

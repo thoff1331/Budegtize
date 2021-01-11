@@ -1,8 +1,17 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { shallow } from "enzyme";
+import App from "./App";
+import Header from "./components/Header/header";
+it("renders without crashing", () => {
+  shallow(<App />);
+});
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+it("haeder renders without crashing", () => {
+  shallow(<Header />);
+});
+
+it("renders app header", () => {
+  const wrapper = shallow(<Header />);
+  let welcome = <h1>Budgetize</h1>;
+
+  expect(wrapper.contains(welcome)).toEqual(true);
 });
