@@ -1,17 +1,35 @@
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 import App from "./App";
-import Header from "./components/Header/header";
-it("renders without crashing", () => {
+import React from "react";
+import toJson from "enzyme-to-json";
+const mockHandleClick = jest.fn();
+
+// application is pretty small so I put all of the tests in one file
+
+// shallow is used to check the componenet with out the children components
+
+// mount will render the component as well as the child component
+
+it("renders App component without crashing", () => {
   shallow(<App />);
 });
 
-it("haeder renders without crashing", () => {
-  shallow(<Header />);
+it("Renders Header without crashing", () => {
+  const wrapper = shallow(<App />);
+  const header = <h1>Enter a Number to convert it to a Roman Numeral</h1>;
+  expect(wrapper.contains(header)).toBe(true);
 });
+it("Result h1 renders only once", () => {
+  const wrapper = shallow(<App />);
+  expect(wrapper.find(".converted-number").length).toEqual(1);
+});
+it("should pass a selected value to the onChange function", () => {
+  const component = shallow(<App />);
+  component.find("input").simulate("change", {
+    target: {
+      value: "Change function",
+    },
+  });
 
-it("renders app header", () => {
-  const wrapper = shallow(<Header />);
-  let welcome = <h1>Budgetize</h1>;
-
-  expect(wrapper.contains(welcome)).toEqual(true);
+  expect(toJson(component)).toMatchSnapshot();
 });
