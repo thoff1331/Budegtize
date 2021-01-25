@@ -2,6 +2,7 @@ This application is a SPA that is designed to take in an integer from a user inp
 
 To run this application and see it in your browser.
 
+once in the root directorry of the project open a terminal and run npm i or npm install to ensure you have the latest version of the packages installed.
 in a terminal run nodemon server to spin up a node server
 in a seperate terminal run npm start to see the apps' UI.
 
