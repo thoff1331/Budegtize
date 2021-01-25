@@ -6,8 +6,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      api: "",
-      apiInput: "",
+      number: "",
+      userInput: "",
     };
   }
   handleChange = (event) => {
@@ -15,18 +15,18 @@ class App extends Component {
   };
 
   handleApi = (e, num) => {
-    if (this.state.apiInput > 255) {
+    if (num > 255 || num < 0) {
       alert("Please Enter a number between 1 & 255");
     } else {
       axios
-        .get("/api/num", {
+        .get(`/romannumeral/`, {
           params: {
-            integer: this.state.apiInput,
+            integer: this.state.userInput,
           },
         })
         .then((response) => {
           this.setState({
-            api: response.data,
+            number: response.data,
           });
         });
     }
@@ -40,18 +40,17 @@ class App extends Component {
             placeholder="Enter a number"
             type="number"
             onChange={this.handleChange}
-            name="apiInput"
+            name="userInput"
           />
           <button
             id="convert-button"
-            onClick={(e) => this.handleApi(e, this.state.apiInput)}
+            onClick={(e) => this.handleApi(e, this.state.userInput)}
           >
             Convert
           </button>
         </div>
         <h1 className="converted-number">
-          {" "}
-          Your Number as A Roman Numeral is :{this.state.api}
+          Your Number as A Roman Numeral is :{this.state.number}
         </h1>
       </div>
     );

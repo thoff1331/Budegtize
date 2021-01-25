@@ -2,7 +2,7 @@ import { shallow, mount } from "enzyme";
 import App from "./App";
 import React from "react";
 import toJson from "enzyme-to-json";
-const mockHandleClick = jest.fn();
+import Button from "./App";
 
 // application is pretty small so I put all of the tests in one file
 
@@ -32,4 +32,22 @@ it("should pass a selected value to the onChange function", () => {
   });
 
   expect(toJson(component)).toMatchSnapshot();
+});
+
+it("renders only one button with Convert", () => {
+  const wrapper = shallow(<App />);
+  expect(wrapper.find("#convert-button").exists()).toBeTruthy();
+});
+
+it("Button has text of Convert", () => {
+  const wrapper = shallow(<App />);
+  let button = wrapper.find("#convert-button");
+  expect(button.text()).toEqual("Convert");
+});
+
+it("Button Clicks", () => {
+  const wrapper = shallow(<App />);
+  const button = wrapper.find("#convert-button").simulate("click");
+  const mockButtonClick = jest.fn();
+  expect(mockButtonClick).toBeCalledTimes(0);
 });

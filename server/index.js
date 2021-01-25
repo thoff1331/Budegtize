@@ -3,7 +3,7 @@ const app = express();
 const { numberToRoman } = require("./controller");
 
 app.use(express.json());
-app.get("/api/num", numberToRoman);
+app.get("/romannumeral", numberToRoman);
 
 const PORT = 8080;
 
