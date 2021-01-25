@@ -19,7 +19,9 @@ I used an agile approach to this application as it is what I am most comfortable
 
 For testing I used Jest and Enzyme. the tests are located in a file called setUpTests.js in the src foldeer. I tested to make sure that all elements need to solve the problem were present, if the button fired and if the input tracked changes in text.
 
-Packageing Layout
+you can see the test results in a terminal by running npm test.
+
+Packaging Layout
 
 I used Express to assist with my api calls to the front end and it being used in the server folder.
 
@@ -35,4 +37,8 @@ I used Wikipedia to verify that my roman numeral conversions were correct
 
 https://en.wikipedia.org/wiki/Roman_numerals
 
-Dependeny Attribution
+License
+
+The dependemcies in this project are licensed under the MIT license.
+
+which more information can be found in in License.md file

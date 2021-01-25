@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./App.css";
 
+// This the component that renders the UI for the application. handles user input.
+// Makes the API call when the button is clicked.
+// I wanted to just fire the api call on click rather than on change
+// because i felt that it was distracting to have the value constantly changing.
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -19,7 +24,7 @@ class App extends Component {
       alert("Please Enter a number between 1 & 255");
     } else {
       axios
-        .get(`/romannumeral/`, {
+        .get(`/romannumeral/:`, {
           params: {
             integer: this.state.userInput,
           },
