@@ -28,6 +28,9 @@ class App extends Component {
           this.setState({
             number: response.data,
           });
+        })
+        .catch((err) => {
+          alert("Please Try Again");
         });
     }
   };

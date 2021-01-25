@@ -11,7 +11,7 @@ exports[`should pass a selected value to the onChange function 1`] = `
     className="user-elements"
   >
     <input
-      name="apiInput"
+      name="userInput"
       onChange={[Function]}
       placeholder="Enter a number"
       type="number"
@@ -26,7 +26,6 @@ exports[`should pass a selected value to the onChange function 1`] = `
   <h1
     className="converted-number"
   >
-     
     Your Number as A Roman Numeral is :
   </h1>
 </div>

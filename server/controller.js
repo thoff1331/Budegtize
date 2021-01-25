@@ -1,3 +1,8 @@
+// this is the heart of the application the user input comes in through a query
+// the romanReferenceObject is used to convert values to roman numbers
+// the remainder is then added to the last value found in the mapping object
+// for example numbers ending in 3 will  all have III
+
 const numberToRoman = (req, res) => {
   let str = req.query.integer;
   let num = parseInt(str);
