@@ -41,4 +41,4 @@ License
 
 The dependencies in this project are licensed under the MIT license.
 
-which more information can be found in in License.md file
+which more information can be found in the License.md file
