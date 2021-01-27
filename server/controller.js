@@ -18,14 +18,14 @@ const numberToRoman = (req, res) => {
     IV: 4,
     I: 1,
   };
-  let remiander;
+  let remainder;
   if (num > 255 || num < 0)
     console.log("Ensure your input is a  number and  less than 255");
   else {
     for (let val in romanReferenceObject) {
-      remiander = Math.floor(num / romanReferenceObject[val]);
-      if (remiander >= 0) {
-        for (let i = 0; i < remiander; i++) {
+      remainder = Math.floor(num / romanReferenceObject[val]);
+      if (remainder >= 0) {
+        for (let i = 0; i < remainder; i++) {
           value += val;
         }
       }
